@@ -1,17 +1,13 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import GrandBox from './GrandBox';
 
 const Box = () => {
-    const [plus,setPlus] = useState(0);
-    const Sum = () => {
-        setPlus(plus + 1);
-    }
-
+  let count = useSelector((state) => state.count);
   return (
-    <div className='Box'>
-        <div>Box:{plus}</div>
-        <br/>
-        <button onClick={Sum}>클릭 + </button>
+    <div>
+        이것은 박스{count}
+        <GrandBox />
     </div>
   )
 }
